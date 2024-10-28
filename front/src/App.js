@@ -1,7 +1,9 @@
+import "./App.css";
+
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
-function AudioRecorder() {
+function App() {
   const [isRecording, setIsRecording] = useState(false);
   const [audioURL, setAudioURL] = useState('');
   const mediaRecorderRef = useRef(null);
@@ -53,11 +55,14 @@ function AudioRecorder() {
 
   return (
     <div className='background'>
-      <button onClick={isRecording ? handleStopRecording : handleStartRecording}>
+      <h1 className="header">
+        Tool Finder
+      </h1>
+      <button className='record-button' onClick={isRecording ? handleStopRecording : handleStartRecording}>
         {isRecording ? 'Stop Recording' : 'Start Recording'}
       </button>
       {transcript && (
-        <div>
+        <div className="transcribed-text">
           <p>{transcript}</p>
         </div>
       )}
@@ -65,4 +70,4 @@ function AudioRecorder() {
   );
 }
 
-export default AudioRecorder;
+export default App;
