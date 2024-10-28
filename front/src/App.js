@@ -61,10 +61,10 @@ function App() {
   return (
     <div className='background'>
       <h1 className="header">
-        Tool Finder
+        Assistente de Almoxarifado
       </h1>
       <button className='record-button' onClick={isRecording ? handleStopRecording : handleStartRecording}>
-        {isRecording ? 'Stop Recording' : 'Start Recording'}
+        {isRecording ? 'Parar de gravar' : 'Começar a gravar'}
       </button>
       {transcript && (
         <div className="transcribed-text">
