@@ -19,6 +19,10 @@
     color: white;
 }
 
+.item {
+    list-style-type: none;
+}
+
 .transcribed-text {
     border: #282c34;
     border-width: 2px;

@@ -71,16 +71,12 @@ async def transcribe_audio(file_path: str):
 
 # Função para buscar códigos SAP no dicionário de ferramentas
 def buscar_codigo_sap(texto):
-    resultados = []
+    resultados = {}
     
     # Itera sobre as descrições e códigos do dicionário importado
     for descricao, codigo_sap in materiais_equipamentos.items():
         if descricao.lower() in texto.lower():
-            resultados.append(f"Código SAP da ferramenta '{descricao}': {codigo_sap}")
-
-    # Verifica se algum código foi encontrado
-    if not resultados:
-        resultados.append("Nenhuma ferramenta encontrada no texto transcrito.")
+            resultados[descricao] = codigo_sap
     
     return resultados
 

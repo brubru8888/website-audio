@@ -1,0 +1,48 @@
+[33mcommit 6fb39b7c0698c01071787e86f20aa19b5da3b419[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 16:27:57 2024 -0300
+
+    ajust front
+
+[33mcommit 936ad7c77ad6ea5a2090b4bc5863c44cbde70fdd[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 7c14c4d fc9512b
+Author: Bruna <bbariccatti@usp.br>
+Date:   Mon Oct 28 15:37:05 2024 -0300
+
+    merge
+
+[33mcommit 7c14c4d07885b5e19ced22662c6de3c79cd835d6[m
+Author: Bruna <bbariccatti@usp.br>
+Date:   Mon Oct 28 15:29:00 2024 -0300
+
+    add code
+
+[33mcommit fc9512b0ae0fbcb341a0df8a5328a43bdbd142f5[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 15:25:06 2024 -0300
+
+    format front
+
+[33mcommit e34f59ea02734e9f5bc24d0f0797a19afb5edd6a[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 14:17:58 2024 -0300
+
+    fix llm
+
+[33mcommit 243b96455359a10df789a814facdd50d74c48a6e[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 13:36:31 2024 -0300
+
+    update requirements
+
+[33mcommit 92c5e5994e637e889165cbb211b2420c4c87e6c9[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 13:32:28 2024 -0300
+
+    add llm functionalities
+
+[33mcommit 64ef0a9cd0df704243ce3121ccc5a6a0eb7486fe[m
+Author: Eduarda Neumann <eduardafneumann@gmail.com>
+Date:   Mon Oct 28 11:31:39 2024 -0300
+
+    initial version

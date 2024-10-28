@@ -9,6 +9,7 @@ function App() {
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const [transcript, setTranscript] = useState();
+  const [itens, setItens] = useState();
 
   const handleStartRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -47,7 +48,11 @@ function App() {
           'Content-Type': 'multipart/form-data',
         },
       });
-      setTranscript(response.data.transcription.text)
+      setTranscript(response.data.transcription)
+      setItens(response.data.sap_codes)
+      console.log(response.data)
+      console.log(response.data.transcription)
+      console.log(response.data.sap_codes)
     } catch (error) {
       console.error('Error uploading audio:', error);
     }
@@ -63,8 +68,26 @@ function App() {
       </button>
       {transcript && (
         <div className="transcribed-text">
+          <h1 className="titulo">Texto identificado</h1>
           <p>{transcript}</p>
         </div>
+      )}
+      {itens && Object.keys(itens).length>0 && (
+        <div className="equipamentos">
+        <h1 className="titulo">Equipamentos identificados</h1>
+        <ul className="item">
+          {Object.entries(itens).map(([key, value]) => (
+            <li key={key}>
+              <strong>{key}:</strong> {value}
+            </li>
+          ))}
+        </ul>
+      </div>
+      )}
+      {itens && Object.keys(itens).length==0 && (
+      <div className="equipamentos">
+        <h1 className="titulo">Nenhum equipamento identificado</h1>
+      </div>
       )}
     </div>
   );
