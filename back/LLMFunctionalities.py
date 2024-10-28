@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import openai
 
-api_key = "a"
+api_key = ""
 
 class LLMFunc:
 

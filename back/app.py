@@ -48,7 +48,11 @@ async def transcribe_audio(file_path: str):
         files = {
             'file': audio_file
         }
-        data = {'model': 'whisper-1', 'language' : 'pt'}
+        data = {'model': 'whisper-1', 
+                'language' : 'pt',
+                'temperature': 0.1,
+                'prompt' : "Me diga o nome das ferramentas que vou falar a seguir"
+                }
         
         response = requests.post(OPENAI_API_URL, headers=headers, files=files, data=data)
 
