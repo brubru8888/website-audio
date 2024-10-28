@@ -26,7 +26,7 @@ function App() {
       const audioUrl = URL.createObjectURL(audioBlob);
       setAudioURL(audioUrl);
       audioChunksRef.current = [];
-      sendAudioToBackend(audioBlob);  // Call function to send audio to backend
+      sendAudioToBackend(audioBlob); 
     };
 
     mediaRecorderRef.current.start();
@@ -40,7 +40,7 @@ function App() {
 
   const sendAudioToBackend = async (audioBlob) => {
     const formData = new FormData();
-    formData.append('audio', audioBlob, 'recording.wav'); // Append the Blob as a file
+    formData.append('audio', audioBlob, 'recording.wav');
     
     try {
       const response = await axios.post('http://localhost:5000/upload', formData, {
@@ -70,6 +70,11 @@ function App() {
         <div className="transcribed-text">
           <h1 className="titulo">Texto identificado</h1>
           <p>{transcript}</p>
+          {audioURL && (
+            <div>
+              <audio controls src={audioURL} />
+            </div>
+          )}
         </div>
       )}
       {itens && Object.keys(itens).length>0 && (
