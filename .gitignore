@@ -1,0 +1,7 @@
+back/venv
+back/__pycache__
+back/uploads
+
+front/node_modules
+front/public
+front/package-lock.json
