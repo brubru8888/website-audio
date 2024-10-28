@@ -8,10 +8,15 @@ class LLMFunc:
 
     def transcrever_audio(audio):
         url = "https://api.openai.com/v1/audio/transcriptions"
-        headers = {"Authorization": f"Bearer {api_key}"}
+        headers = {"Authorization": f"Bearer {api_key}", 
+                   'Content-Type': 'application/json'}
         data = {"model": "whisper-1"}
 
-        files = {"file": audio}
+        files = {
+            'file': audio,
+            'model': 'whisper-1'
+        }
+
         response = requests.post(url, headers=headers, files=files, data=data)
         print(response.status_code)
         
