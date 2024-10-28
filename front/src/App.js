@@ -6,6 +6,7 @@ function AudioRecorder() {
   const [audioURL, setAudioURL] = useState('');
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const [transcript, setTranscript] = useState();
 
   const handleStartRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -44,25 +45,24 @@ function AudioRecorder() {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('Audio uploaded successfully:', response.data);
+      setTranscript(response.data.transcription.text)
     } catch (error) {
       console.error('Error uploading audio:', error);
     }
   };
 
   return (
-    <div>
+    <div className='background'>
       <button onClick={isRecording ? handleStopRecording : handleStartRecording}>
         {isRecording ? 'Stop Recording' : 'Start Recording'}
       </button>
-      {audioURL && (
+      {transcript && (
         <div>
-          <p>Recorded Audio:</p>
-          <audio controls src={audioURL} />
+          <p>{transcript}</p>
         </div>
       )}
     </div>
   );
 }
 
-export default AudioRecorder;
+export default AudioRecorder;
