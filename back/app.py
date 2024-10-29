@@ -14,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OPENAI_API_KEY = ""
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_URL = "https://api.openai.com/v1/audio/transcriptions"
 
 @app.post('/upload')
@@ -61,12 +61,12 @@ async def transcribe_audio(file_path: str):
         if response.status_code != 200:
             raise HTTPException(status_code=response.status_code, detail=response.text)
             
-        return response.json() 
+        return response.json()
 
 
 def buscar_codigo_sap(texto):
     resultados = {}
-  
+    
     for descricao, codigo_sap in materiais_equipamentos.items():
         if descricao.lower() in texto.lower():
             resultados[descricao] = codigo_sap
