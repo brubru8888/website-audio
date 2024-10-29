@@ -22,13 +22,16 @@ pip install fastapi uvicorn requests pandas openai
 
 ## Run backend
 
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn app:app --reload --port 5000
+- python -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt
+- uvicorn app:app --reload --port 5000
 
 ## Run frontend
 
-npm install
-npm start
+- npm install
+- npm start
 
+## Créditos
+
+Projeto feito durante um Hackathon por: Bruna Bariccatti, Eduarda Neumann e Juliana Pirolla. (Aprimorado posteriormente)
